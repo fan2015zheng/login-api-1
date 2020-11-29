@@ -1,0 +1,20 @@
+const dotenv = require('dotenv')
+
+if(!process.env.heroku) {
+  dotenv.config()
+}
+
+let port = 5000
+let rootUrl = `http://localhost:${port}`
+
+if(process.env.heroku){
+  const herokuAppName = ""
+  port = process.env.port
+  rootUrl = `https://${herokuAppName}.herokuapp.com/`
+} 
+
+
+module.exports = {
+  PORT: port,
+  ROOT_URL: rootUrl
+}
