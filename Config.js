@@ -8,7 +8,7 @@ let port = 5000
 let rootUrl = `http://localhost:${port}`
 
 if(process.env.heroku){
-  const herokuAppName = ""
+  const herokuAppName = "fan-login"
   port = process.env.port
   rootUrl = `https://${herokuAppName}.herokuapp.com/`
 } 
