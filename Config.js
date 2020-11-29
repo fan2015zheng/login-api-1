@@ -4,17 +4,17 @@ if(!process.env.heroku) {
   dotenv.config()
 }
 
-let port = 5000
-let rootUrl = `http://localhost:${port}`
+let PORT = 5000
+let rootUrl = `http://localhost:${PORT}`
 
 if(process.env.heroku){
   const herokuAppName = "fan-login"
-  port = process.env.PORT
+  PORT = process.env.PORT
   rootUrl = `https://${herokuAppName}.herokuapp.com`
 } 
 
 
 module.exports = {
-  PORT: port,
+  PORT: PORT,
   ROOT_URL: rootUrl
 }
